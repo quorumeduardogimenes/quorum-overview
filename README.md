@@ -1,7 +1,7 @@
 # Quorum Overview
 
-Documentação da Quorum como empresa: produtos, negócio, clientes, pessoas, tecnologia e, em especial, o **Q Analytics**. Tudo em português do Brasil.
+Documentation of Quorum as a company: products, business, customers, people, technology and, in particular, **Q Analytics**. Written in English.
 
-Comece por [`00-indice.md`](00-indice.md) (mapa de leitura e registro de mudanças) e leia [`00-guia-da-documentacao.md`](00-guia-da-documentacao.md) antes de alterar qualquer arquivo.
+Start with [`00-index.md`](00-index.md) (reading map and change log) and read [`00-documentation-guide.md`](00-documentation-guide.md) before changing any file.
 
-Esta é uma cópia da documentação mantida no projeto "Quorum Overview" do Claude. No projeto, os caminhos começam com `quorum/` (por exemplo, `quorum/glossario.md`); neste repositório esse prefixo foi removido e os arquivos ficam na raiz. Os arquivos não devem conter senhas, tokens, chaves nem endereços IP de servidores (regra 9 do guia).
+This repository is the only home of the documentation (it previously lived in the "Quorum Overview" Claude project, moved here on 2026-10-30). The files must never contain passwords, tokens, keys or server IP addresses (principle 9 of the guide).
