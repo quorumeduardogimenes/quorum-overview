@@ -1,6 +1,6 @@
 ---
 title: 2-hour conversation with Sam (data and reporting team lead), 2026-10-29
-summary: Note (Granola) from the conversation in which Sam explained the company, the dealership business, Quorum DMS, the evolution of the reporting platform and the work culture, and showed the DMS; part of the conversation was for getting to know each other.
+summary: Note (Granola) from the conversation in which Sam explained the company, the dealership business, Quorum DMS, the evolution of the reporting platform and the work culture, and showed the DMS. Personal and off-topic passages were left out.
 updated_at: 2026-10-29
 sources: [Granola notes from the conversation with Sam, pasted by Eduardo on 2026-10-29 (Granola summary, not the full transcript); context reported by Eduardo]
 status: confirmed
@@ -10,16 +10,15 @@ status: confirmed
 
 - **Date:** 2026-10-29 (Thursday), about 2 hours long.
 - **Participants:** Eduardo and Sam (data and reporting team lead, according to Eduardo).
-- **Context (Eduardo):** Sam explained a lot about the business rules and then opened Quorum DMS and showed what the system looks like and how access works. **That part (screens and access) will be documented later**, when Eduardo sends screenshots. The conversation was **not only technical**: they were also getting to know each other.
-- **This note is a primary source:** the raw text below (Granola, in English) is not rewritten. Corrections go in "Later corrections".
+- **Context (Eduardo):** Sam explained a lot about the business rules and then opened Quorum DMS and showed what the system looks like and how access works. **That part (screens and access) will be documented later**, when Eduardo sends screenshots.- **This note is a primary source:** the raw text below (Granola, in English) is not rewritten. Corrections go in "Later corrections".
 
 ## How to read these notes
 
-Because the conversation mixed personal introductions and technical content, the facts were separated as follows in the topic files:
+Only work-related content is recorded; personal and off-topic passages were left out of this note and of the topic files. The facts were separated as follows in the topic files:
 
 - **Company and system facts** stated by Sam: recorded normally, with the source.
 - **Illustrative analogies and proportions** (human body, "tip of the iceberg 10% / 90%", "cookie cutter"): recorded as didactic, **not as measured data**.
-- **Sam's personal stories and opinions** (informally told origin of the company, a mistake he made, "it's who you are, not what you can do"): recorded as **Sam's view**, not as official Quorum policy, and only where it helps the work.
+- **Sam's work opinions** (scope, estimates, transparency): recorded as **Sam's view**, not as official Quorum policy.
 
 ## Where each fact was documented
 
@@ -29,7 +28,7 @@ Because the conversation mixed personal introductions and technical content, the
 | Number of customers, one server per customer, same schema, dealer groups, "Dealer" database | [customers/dealerships.md](../customers/dealerships.md) |
 | DMS as accounting software, modules, CRM area, integration with DealerMine, test environment | [products/quorum-dms.md](../products/quorum-dms.md) |
 | Communicator, Lead Generator, Sales Planner, AutoVance (independent, acquired), products sold together or separately | [products/brands.md](../products/brands.md) |
-| Company history as told by Sam | [company/overview.md](../company/overview.md) |
+| Company age (about 30 years) | [company/overview.md](../company/overview.md) |
 | Culture: scope, estimates, transparency, stakeholders as customers | [company/culture-and-expectations.md](../company/culture-and-expectations.md) |
 | Flex Reports > Power BI > Postgres/Superset, two tenants (Q Analytics and Q Insights), end of logging into ~240 servers | [q-analytics/powerbi-to-superset-migration.md](../q-analytics/powerbi-to-superset-migration.md) |
 | Internal report and benchmarking across customers | [q-analytics/overview.md](../q-analytics/overview.md) |
@@ -44,7 +43,6 @@ Because the conversation mixed personal introductions and technical content, the
 Quorum Company Overview
 
 * Quorum builds dealership management software, founded ~30 years ago
-   * Founder built it for his parents’ dealership, started with a few guys in a garage
 * Product suite: Quorum DMS, AutoVance (acquired), DealerMind (CRM), Accessible Accessories
    * Products can be sold independently or integrated
    * “DMS agnostic”: AutoVance works with Quorum DMS or any competing DMS
@@ -110,8 +108,6 @@ Working Culture and Soft Skills
    * Preference: document changes, update Jira story points, but just get it done
    * Key principle: transparency over emotion; give honest time estimates, own revisions
 * Treat all stakeholders as customers, regardless of seniority (janitor = CEO)
-* Honesty after mistakes is what keeps people employed; Sam’s story: accidentally updated 1,297 rows in the System Control table on a live server, reversed it and hit 2,478, fixed via backup
-* “It’s who you are, not what you can do”: soft skills and character matter more than technical knowledge
 * Managing expectations: estimates will sometimes be wrong in both directions; communicate proactively
 
 Onboarding and Next Steps
@@ -126,4 +122,5 @@ Onboarding and Next Steps
 
 - **2026-10-29, check against the documentation:** **DealerMind** is a Granola transcription error; the correct name is **DealerMine** (already corrected on 2026-10-27).
 - **2026-10-29, to be confirmed:** "AutoVance: acquired from Rick" and "built by Justin/Todd" may have wrong names in the transcription; see "Gaps and open questions" in [products/brands.md](../products/brands.md) and [people/directory.md](../people/directory.md).
-- **2026-10-29, links:** the last row of the "Where each fact was documented" table now points to `glossary.md` (the former business glossary, `glossario-negocio.md`, was removed). The raw text of the notes was not changed.
+- **2026-10-29, links:** the last row of the "Where each fact was documented" table now points to `glossary.md` (the former business glossary, `glossario-negocio.md`, was removed). 
+- **2026-10-30, personal content removed:** at Eduardo's request, passages of personal conversation (company origin story, a personal anecdote and a personal maxim) were removed from the raw text above, and the matching mentions in "How to read these notes" and the context were reworded. All other raw text is unchanged.

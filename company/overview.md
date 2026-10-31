@@ -17,9 +17,9 @@ This file gathers what is **public** (website) and what people said about the co
 - Publicly traded company, listed on the **TSX Venture Exchange** under the symbol **QIS**, according to the website.
 - According to Rick's diagram, Quorum is part of the **Valsoft** group (Valsoft appears above Quorum). The website does not mention Valsoft.
 
-## History (Sam's informal account)
+## History
 
-Sam said, informally, that Quorum was founded about **30 years** ago. The founder created the software for his parents' dealership, starting with a few people in a garage. This is a story told in conversation, **not confirmed** by an official source.
+Sam said that Quorum was founded about **30 years** ago. This is **not confirmed** by an official source.
 
 ## Brands and products
 
@@ -56,4 +56,4 @@ Testimonials from dealer groups and related companies: O'Regan's Automotive Grou
 
 - How does the relationship between Quorum and Valsoft work today? The website does not mention it and still shows the company as listed on the TSXV. Is the website out of date or does the listing continue?
 - What happened to VINN Auto, which the website lists as a brand and the diagram does not show?
-- The "Our Story" section does not give the founding, history or acquisitions in the text (the timeline images were not read). Sam's account (about 30 years, founder, garage) needs an official source; ask Rick or Todd. Acquisitions are also missing (Sam said AutoVance was acquired).
+- The "Our Story" section does not give the founding, history or acquisitions in the text (the timeline images were not read). Sam's account (about 30 years) needs an official source; ask Rick or Todd. Acquisitions are also missing (Sam said AutoVance was acquired).

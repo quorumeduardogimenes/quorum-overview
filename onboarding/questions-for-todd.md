@@ -8,7 +8,7 @@ status: draft
 
 # Questions for Todd
 
-This file is the **source** of the list: the original living document (a Claude Doc) was deleted at Eduardo's request on 2026-10-27. The questions stay in English because they will be sent to Todd (Microsoft Teams or meeting). To change them, follow section 7 of the [guide](../00-documentation-guide.md).
+This file is the **source** of the list: the original living document (a Claude Doc) was deleted at Eduardo's request on 2026-10-27. The questions stay in English because they will be sent to Todd (Microsoft Teams or meeting). To change them, follow section 7 of the [guide](../documentation-guide.md).
 
 **List rule:** an answered question leaves this list. The **original round numbering was kept**, so there are numbers missing on purpose. What was removed and why is in [first-weeks.md](first-weeks.md), section "Follow-up questions for Todd". Technical context in [../q-analytics/ingestion-agent.md](../q-analytics/ingestion-agent.md), [../q-analytics/ingestion-pipeline.md](../q-analytics/ingestion-pipeline.md) and [../q-analytics/architecture.md](../q-analytics/architecture.md).
 
@@ -50,6 +50,6 @@ It would help me a lot to see these in practice. Could you show them live, or re
 
 ## Gaps and open questions
 
-- The idea of undoing job deletion via the X did not make it into the list (it is an improvement idea, see [../q-analytics/improvement-ideas.md](../q-analytics/improvement-ideas.md)). Include it if Eduardo asks.
+- The idea of undoing job deletion via the X did not make it into the list (it is an improvement idea, see QA-1 in [../improvement-ideas.md](../improvement-ideas.md)). Include it if Eduardo asks.
 - New questions from the practice that have not become questions yet: assignment of the pipeline to the client in the client panel (the first job will show it), "Unassigned" and the difference between 1776 and 108 jobs. New candidate: what the contact type `Turned Off` means, which accounts for about 75% of `DTContactHistory` in the test database. Eduardo decides whether they become a Round 4.
 - The question "does the destination table have to exist before the job?" was **answered on 2026-10-29** by the job form itself ("Target tables must already exist") and left the list.

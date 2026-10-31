@@ -1,8 +1,8 @@
 ---
 title: Eduardo's first-weeks plan
 summary: Schedule, action checklist and status of the onboarding follow-up questions, agreed with Rick, Todd and Sam.
-updated_at: 2026-10-29
-sources: [meeting with Rick, 2026-10-26 (../meetings/2026-10-26-rick-kickoff.md), meeting with Todd, 2026-10-26 (../meetings/2026-10-26-todd-technical-tour.md), call with Todd, 2026-10-27, and his Teams message of the same day (../meetings/2026-10-27-todd-ingestion-call.md), Todd's deck (sent on 2026-10-27), Todd's Word document about the agent (2026-10-27), conversation with Sam, 2026-10-29 (../meetings/2026-10-29-sam-business-rules.md), Eduardo (diagram received, Todd's deck and Word document shared, accesses received, clarifications, 2026-10-27; connection to the test Postgres, Todd's guidance, exploration and object creation in dev, README and screenshots of the ingestion tool, 2026-10-28; exploration of the source database, production jobs, message to Todd, first job completed and test dashboard in Superset Dev, 2026-10-29)]
+updated_at: 2026-10-30
+sources: [meeting with Rick, 2026-10-26 (../meetings/2026-10-26-rick-kickoff.md), meeting with Todd, 2026-10-26 (../meetings/2026-10-26-todd-technical-tour.md), call with Todd, 2026-10-27, and his Teams message of the same day (../meetings/2026-10-27-todd-ingestion-call.md), Todd's deck (sent on 2026-10-27), Todd's Word document about the agent (2026-10-27), conversation with Sam, 2026-10-29 (../meetings/2026-10-29-sam-business-rules.md), conversation with Sam, 2026-10-30 (../meetings/2026-10-30-sam-jira-and-agile-process.md), follow-up with Rick, 2026-10-30 (../meetings/2026-10-30-rick-follow-up.md), Jira DR-2907 (Atlassian connector, 2026-10-30), Eduardo (diagram received, Todd's deck and Word document shared, accesses received, clarifications, 2026-10-27; connection to the test Postgres, Todd's guidance, exploration and object creation in dev, README and screenshots of the ingestion tool, 2026-10-28; exploration of the source database, production jobs, message to Todd, first job completed and test dashboard in Superset Dev, 2026-10-29)]
 status: draft
 ---
 
@@ -15,10 +15,12 @@ status: draft
 | 2026-10-26 | 1-on-1 to walk through the architecture | Todd | n/s | done (see [meetings/2026-10-26-todd-technical-tour.md](../meetings/2026-10-26-todd-technical-tour.md)) |
 | 2026-10-27 | Message and call about the test environment and creating ingestion flows | Todd | n/s | done (see [meetings/2026-10-27-todd-ingestion-call.md](../meetings/2026-10-27-todd-ingestion-call.md)) |
 | 2026-10-29 | Conversation about the dealership business, DMS, history of the reports and culture; DMS demonstration | Sam | about 2 h | done (see [meetings/2026-10-29-sam-business-rules.md](../meetings/2026-10-29-sam-business-rules.md)); screens and access will be documented with screenshots |
+| 2026-10-30 | Conversation about Jira and the agile process ("D&R"); review of Eduardo's early notes and improvement ideas about an hour later | Sam | n/s | conversation done (see [meetings/2026-10-30-sam-jira-and-agile-process.md](../meetings/2026-10-30-sam-jira-and-agile-process.md)); review scheduled for about an hour after the call `(inferred: about 11:00 BRT)`, status to confirm |
+| 2026-10-30 | Follow-up at the end of the first week: sandbox work shown, Agent Console epic, sprint, Mori rebranding | Rick | n/s | done (see [meetings/2026-10-30-rick-follow-up.md](../meetings/2026-10-30-rick-follow-up.md)) |
 | Week of 2026-10-26 | Shadowing on the existing reports | Sam | 3 to 4 hours | in progress: the 2026-10-29 conversation may have been part of it; Sam said Eduardo can follow him while he works (to be arranged later the same day) |
 | 2026-10-28 (Wednesday, to be confirmed) | Check-in | Rick | 30 min | Rick is to schedule |
 | Week of 2026-10-26 | Receive diagram and meeting notes | Rick | n/a | diagram received on 2026-10-27 (see [products/brands.md](../products/brands.md)); written notes: not confirmed |
-| Week of 2026-11-02 | Start the epic of new report stories | Michael (epic owner) | n/a | pending |
+| Week of 2026-11-02 | Start the epic of new report stories (Michael's epic, 2026-10-26) and the Agent Console epic DR-2907 (Patrick, 2026-10-30); whether they are the same epic is unknown | Michael / Patrick | n/a | Agent Console: two stories are in the sprint starting Tuesday `(inferred: 2026-11-03)`; see [tasks/dr-2907-agent-console-rebuild.md](../tasks/dr-2907-agent-console-rebuild.md) |
 
 Context: Sam moves to the support team in the week of 2026-11-02 (Rick), so the shadowing needs to happen this week.
 
@@ -60,6 +62,28 @@ Context: Sam moves to the support team in the week of 2026-11-02 (Rick), so the 
 
 **Cautions agreed with Todd:** clicking the X in the ingestion tool can delete jobs; do not modify existing pipelines and jobs, not even in dev and even as an admin (the incrementals and historicals have no backup); practice only in a test environment (the dev version that Todd recommends, which sits behind the firewall, or the data migration environment); in the test Postgres, work only in `datamigration`, in your own schema. Credentials, IPs, addresses, users and database codes never go into this documentation. The DealerMine test database has real customer data: no data rows are recorded.
 
+## Actions from the conversation with Sam (2026-10-30)
+
+| Action | Who | Status |
+|---|---|---|
+| Give Eduardo access to Jira | Rick | done (Rick granted access, per the note) |
+| Review Eduardo's early notes and improvement ideas | Sam and Eduardo | scheduled for about an hour after the call; to confirm that it happened |
+| Record observations in Jira issues, at minimum (Sam's encouragement) | Eduardo | pending |
+| Look at the first Jira card that appeared during the call (the note does not say what it is) | Eduardo `(inferred)` | pending |
+
+Context for these actions: [company/agile-process-and-jira.md](../company/agile-process-and-jira.md) and [company/governance-and-security-practices.md](../company/governance-and-security-practices.md).
+
+## Actions from the follow-up with Rick (2026-10-30)
+
+| Action | Who | Status |
+|---|---|---|
+| Join Sam's call with Rick (about 5 minutes) to align on the sprint handover; Rick was to ping Sam to pull Eduardo in (the note says "3 PM", time zone not stated) | Eduardo | pending (2026-10-30); to confirm that it happened |
+| Meet Patrick about the Agent Console epic (Patrick was booking a meeting for 2026-10-30) and tell him that Estabot already ran on DR-2907 | Eduardo | pending; to confirm the meeting |
+| Analyze the Agent Console (how it is built, which data, where it lives: dealer or common database) and get ready to rebuild it as one of the first DealerMine pages in Q Analytics; started exploring it with Claude Code on 2026-10-30 | Eduardo | in progress; see [tasks/dr-2907-agent-console-rebuild.md](../tasks/dr-2907-agent-console-rebuild.md). Access to the `dm-mono-repo` still to be confirmed |
+| Take over the backlog of Q Analytics support issues when Sam leaves the board (Monday, 2026-11-02) | Eduardo | pending |
+| Refine the Agent Console stories (no product manager; Rick helps in the interim) | Rick, Patrick, Eduardo | pending; Patrick is to book a separate meeting |
+| Explore Handlebars (HTML/CSS) to customize the dashboard visuals | Eduardo | planned (dashboard v2, see [q-analytics/superset-and-security.md](../q-analytics/superset-and-security.md)) |
+
 ## Follow-up questions for Todd
 
 The list of questions **still open**, in English and in three rounds, is in [questions-for-todd.md](questions-for-todd.md), which is the current source. Answered questions are removed from there; the original numbering is kept. This table keeps the history (status as of 2026-10-29; the numbers are those of each round):
@@ -90,18 +114,20 @@ The list of questions **still open**, in English and in three rounds, is in [que
 
 **Answered and removed from this list:** which column the upsert uses as the key (README, 2026-10-28: the job's conflict column, which must match a PRIMARY KEY or UNIQUE of the destination); how to run a job manually (README, 2026-10-28: Run button, with confirmation; used in practice on 2026-10-29); and whether the destination table must exist before the job (job form, 2026-10-29: yes, "Target tables must already exist"; confirmed when creating the table before the first job).
 
-The idea of undoing deletions made with the X and the idea of seeing, in the Destination Servers tab, the pipelines and jobs that use each server are in [q-analytics/improvement-ideas.md](../q-analytics/improvement-ideas.md) and did not make it into the question list.
+The idea of undoing deletions made with the X and the idea of seeing, in the Destination Servers tab, the pipelines and jobs that use each server are in [improvement-ideas.md](../improvement-ideas.md) (QA-1 and QA-2) and did not make it into the question list.
 
 ## Preparation suggestions (inferred, not agreed)
 
 - In the shadowing with Sam, prioritize what only he knows: the business rules behind the reports and the history of modeling decisions. The business foundation is already in [business/dealership-domain.md](../business/dealership-domain.md); at the next meeting, go deeper into the DMS table map and the catalog of existing reports.
 - Re-read the [glossary](../glossary.md) before opening the repositories and the ingestion tool (agent, container, pgAdmin 4, MSSQL, destination server, Query Executor, WO/RO, F&I) and, for Superset, the new terms (weighted average, MTD, native filter, view).
 - Write down each step taken and the screens when creating the personal pipeline, to turn it into a documented step-by-step (it started in [q-analytics/dev-ingestion-practice.md](../q-analytics/dev-ingestion-practice.md)).
+- Read [company/agile-process-and-jira.md](../company/agile-process-and-jira.md) before working the first Jira cards: ceremonies do not happen and the backlog is partly stale, so ask Sam or Rick before assuming a card is current (inferred).
 - Ask Sam whether there is a visual standard for the Q Analytics dashboards before investing more in the look of the test dashboard (inferred).
 
 ## Gaps and open questions
 
 - Accesses and environments Eduardo already has, as of 2026-10-28: production ingestion tool (no admin) and dev (with admin, according to him); pgAdmin 4 web and test Postgres; Superset Dev (admin). Still to record: repository access, confirming the read-only connection to production Postgres, and getting access to the DMS test environment (never record the access values here).
-- Deadline and priorities of Michael's epic.
+- Deadline and priorities of Michael's epic, and whether it is the same as the Agent Console epic DR-2907 (as of 2026-10-30 the only open card assigned to Eduardo is DR-2907; its four stories are unassigned).
 - Rick's expectation for the end of the first two weeks.
+- Questions for Patrick on the Agent Console: planning questions in [../tasks/dr-2907-agent-console-rebuild.md](../tasks/dr-2907-agent-console-rebuild.md) and technical questions in [../q-analytics/agent-console-report.md](../q-analytics/agent-console-report.md), sections "Gaps and open questions".
 - Does Sam remain the reference for the reports after he moves to support? When exactly was the shadowing agreed for?

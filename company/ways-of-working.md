@@ -1,8 +1,8 @@
 ---
 title: Eduardo's ways of working at Quorum
 summary: Working hours, team time zones, meeting cadence and known tools.
-updated_at: 2026-10-29
-sources: [meeting with Rick, 2026-10-26 (../meetings/2026-10-26-rick-kickoff.md), Eduardo (team location and time zone, 2026-10-26), conversation with Sam, 2026-10-29 (../meetings/2026-10-29-sam-business-rules.md), Todd's Teams message (2026-10-27)]
+updated_at: 2026-10-30
+sources: [meeting with Rick, 2026-10-26 (../meetings/2026-10-26-rick-kickoff.md), Eduardo (team location and time zone, 2026-10-26), conversation with Sam, 2026-10-29 (../meetings/2026-10-29-sam-business-rules.md), Todd's Teams message (2026-10-27), conversation with Sam, 2026-10-30 (../meetings/2026-10-30-sam-jira-and-agile-process.md)]
 status: draft
 ---
 
@@ -23,10 +23,12 @@ status: draft
 
 - **Wednesday check-in with Rick:** 30 minutes, to be scheduled by Rick. First occurrence: 2026-10-28 (to be confirmed).
 - 1-on-1 with Todd in the first week (see [onboarding/first-weeks.md](../onboarding/first-weeks.md)).
+- **Team meetings are ad hoc:** there are no regular dailies, sprint planning, retrospectives or refinement meetings; they are called when someone is blocked or needs an update (Sam, 2026-10-30; see [agile-process-and-jira.md](agile-process-and-jira.md)).
 
 ## Known tools
 
-- **Jira:** stories and **story points** live in Jira; Sam said that, when the scope changes, the preference is to update the story points there (see [culture-and-expectations.md](culture-and-expectations.md)).
+- **Jira:** stories and **story points** live in Jira; Sam said that, when the scope changes, the preference is to update the story points there (see [culture-and-expectations.md](culture-and-expectations.md)). Rick granted Eduardo access on or before 2026-10-30. The team is on sprint 116, but formal Scrum ceremonies no longer happen and the backlog is partly stale: see [agile-process-and-jira.md](agile-process-and-jira.md).
+- **Claude and MCP:** Sam uses Claude connected to GitHub, local repositories, Jira and SQL servers, with a Jira PBI Creator skill built by Rick (see [agile-process-and-jira.md](agile-process-and-jira.md)).
 - **Microsoft Teams:** Todd asks that questions be sent there.
 - **GitHub:** Quorum's repositories and organization (access to be arranged with Todd).
 - **Help desk:** Sam indicated that access (for example, to the DMS test environment) can be requested from Todd or the help desk.
@@ -36,5 +38,5 @@ status: draft
 - Fixed overlap hours with the team (window for meetings), especially after 2026-11-01, when the difference may become 4h.
 - Confirm whether Eduardo's start time (9am or 10am BRT) changes when the difference becomes 4h.
 - City/province of the team (e.g., Alberta) and whether there are people in other Canadian time zones.
-- Where the stories of Michael's epic are (Jira confirmed as a tool; the project is missing and whether there is Confluence) and how the help desk is reached.
+- Where the stories of Michael's epic are (Jira confirmed as a tool and Eduardo has access, but no cards were assigned yet as of 2026-10-30; the project is missing and whether there is Confluence) and how the help desk is reached.
 - Access and environments that Eduardo needs to request.

@@ -1,8 +1,8 @@
 ---
 title: Q Analytics, overview
 summary: What Q Analytics is, who it was built for, how it is accessed and what the expansion goal is.
-updated_at: 2026-10-29
-sources: [meeting with Rick, 2026-10-26 (../meetings/2026-10-26-rick-kickoff.md), Rick's diagram (2026-10-27), meeting with Todd, 2026-10-26 (../meetings/2026-10-26-todd-technical-tour.md), Todd's "Analytics Platform" deck (2026-10-27), conversation with Sam, 2026-10-29 (../meetings/2026-10-29-sam-business-rules.md)]
+updated_at: 2026-10-30
+sources: [follow-up with Rick, 2026-10-30 (../meetings/2026-10-30-rick-follow-up.md), meeting with Rick, 2026-10-26 (../meetings/2026-10-26-rick-kickoff.md), Rick's diagram (2026-10-27), meeting with Todd, 2026-10-26 (../meetings/2026-10-26-todd-technical-tour.md), Todd's "Analytics Platform" deck (2026-10-27), conversation with Sam, 2026-10-29 (../meetings/2026-10-29-sam-business-rules.md)]
 status: draft
 ---
 
@@ -31,11 +31,20 @@ In Power BI there were two tenants: **Q Analytics** (customer-facing) and **Q In
 
 Expand Q Analytics coverage to **all products**, not just Quorum DMS. Today, according to Rick's diagram, data flows for 4 products of the Quorum DMS brand (Quorum DMS, PowerLane, Communicator and Sales Planner); the DealerMine and Autovance products are in early progress; the Forecast Tool and Accessible Accessories have little or no data. Full table in [products/brands.md](../products/brands.md). Descope, used today only here, is to be extended to all products (Todd). The deck brings an 8-step roadmap for onboarding a new product (see [architecture.md](architecture.md)).
 
+## Rebranding and AI direction (Rick, 2026-10-30)
+
+Source: [meetings/2026-10-30-rick-follow-up.md](../meetings/2026-10-30-rick-follow-up.md) (Granola summary).
+
+- Q Analytics is to be **rebranded as "Mori Metrics" next year**. "Mori" is the AI brand: everything AI at Quorum falls under it (see [products/brands.md](../products/brands.md)). Date and scope of the rename were not given.
+- **Longer-term vision:** an **MCP server connected to the dashboards**, so users can query the data through AI. Rick's view: the AI harness is the visualization tool of the future. Superset already supports MCP for builders (see [superset-and-security.md](superset-and-security.md)); the vision above is about end users.
+- **First new page of this kind:** the Agent Console rebuild, an internal BDC report that includes Mori AI calls (see [agent-console-report.md](agent-console-report.md) and [the task](../tasks/dr-2907-agent-console-rebuild.md)).
+
 ## Known owners
 
 - Todd: ingestion pipeline and architecture (technical reference for Q Analytics).
 - Sam: data and reporting team lead; author of more than 70% of the original Power BI reports, which were migrated; moves to the support team in the week of 2026-11-02 (Rick; to be reconciled with the current role).
 - Michael: owner of the epic of new report stories, which Eduardo starts tackling in the week of 2026-11-02.
+- Patrick Manning: business partner for the Agent Console rebuild (epic DR-2907, created on 2026-10-29). Whether this epic is Michael's epic is unknown.
 
 ## To go deeper
 
@@ -49,3 +58,4 @@ Technical questions are in each specific file. Pending at the general level:
 - How many reports/dashboards exist today and where is there a catalog of them?
 - Does the internal panel with benchmarking across customers already exist in Superset? Who at Quorum uses it besides leadership?
 - Which reports use summary tables and which read transactions?
+- When and how will the rebranding to "Mori Metrics" happen, and does it affect the product name for dealers, the login or the URLs?

@@ -1,8 +1,8 @@
 ---
 title: Glossary (technical and business)
 summary: Technical concepts and dealership business terms that come up in meetings, explained in plain English, separating the general explanation from what Quorum actually does.
-updated_at: 2026-10-29
-sources: [meeting with Todd, 2026-10-26 (meetings/2026-10-26-todd-technical-tour.md), call with Todd, 2026-10-27 (meetings/2026-10-27-todd-ingestion-call.md), Todd's Word document about the agent (q-analytics/ingestion-agent.md), Todd's "Analytics Platform" deck (2026-10-27), meeting with Rick, 2026-10-26 (meetings/2026-10-26-rick-kickoff.md), conversation with Sam, 2026-10-29 (meetings/2026-10-29-sam-business-rules.md), Eduardo (test Postgres, guidance from Todd, exploration of the dev version of the ingestion tool, the tool's README and screenshots, 2026-10-28; first job in dev ingestion and test dashboard in Superset Dev, 2026-10-29: q-analytics/dev-ingestion-practice.md and q-analytics/superset-and-security.md), general technical knowledge of whoever wrote the documentation]
+updated_at: 2026-10-30
+sources: [meeting with Todd, 2026-10-26 (meetings/2026-10-26-todd-technical-tour.md), call with Todd, 2026-10-27 (meetings/2026-10-27-todd-ingestion-call.md), Todd's Word document about the agent (q-analytics/ingestion-agent.md), Todd's "Analytics Platform" deck (2026-10-27), meeting with Rick, 2026-10-26 (meetings/2026-10-26-rick-kickoff.md), conversation with Sam, 2026-10-29 (meetings/2026-10-29-sam-business-rules.md), conversation with Sam, 2026-10-30 (meetings/2026-10-30-sam-jira-and-agile-process.md), follow-up with Rick, 2026-10-30 (meetings/2026-10-30-rick-follow-up.md), Jira DR-2907 to DR-2911 (tasks/dr-2907-agent-console-rebuild.md and q-analytics/agent-console-report.md), Eduardo (test Postgres, guidance from Todd, exploration of the dev version of the ingestion tool, the tool's README and screenshots, 2026-10-28; first job in dev ingestion and test dashboard in Superset Dev, 2026-10-29: q-analytics/dev-ingestion-practice.md and q-analytics/superset-and-security.md), general technical knowledge of whoever wrote the documentation]
 status: draft
 ---
 
@@ -16,12 +16,20 @@ How to read each entry:
 - **At Quorum** is what someone at the company said, with the source indicated. If something is an assumption, it is marked `(inferred)`.
 - Terms stay in English, as they are said in meetings, with a translation or explanation where it helps.
 
-Alphabetical order. New terms are added here whenever they come up in meetings (see [00-documentation-guide.md](00-documentation-guide.md)). Business context is in [business/dealership-domain.md](business/dealership-domain.md).
+Alphabetical order. New terms are added here whenever they come up in meetings (see [documentation-guide.md](documentation-guide.md)). Business context is in [business/dealership-domain.md](business/dealership-domain.md).
 
 ## Agent
 
 - **General:** a program installed close to a data source that runs tasks requested by a central server and sends the result back.
 - **At Quorum:** the program that the infrastructure team installs on the dealerships' servers for the ingestion tool; it runs as a Windows service, calls the central server and receives the jobs (Todd, call of 2026-10-27; Todd's Word document). In the tool, the agent is linked to a "client" through the `client_id`. See [q-analytics/ingestion-agent.md](q-analytics/ingestion-agent.md).
+
+## Agent Console
+
+- **At Quorum:** the main report of the BDC (call and appointment center) managers: human agents' call handling, answer rates, missed calls, voicemails, voice drops and appointments, with filters and goals. Today it is a Crystal Reports file (`TeamModel_BDC_Results_s1000.rpt`) on top of the `team_model_reporting` tables. It is being rebuilt in Q Analytics, with Mori AI calls included (epic DR-2907). Not to be confused with the **ingestion agent** (see "Agent"). See [q-analytics/agent-console-report.md](q-analytics/agent-console-report.md).
+
+## AI Olympics
+
+- **At Quorum:** an initiative in which the team explored use cases for AI (Sam, 2026-10-30). Format, participants and results were not described. See [company/agile-process-and-jira.md](company/agile-process-and-jira.md).
 
 ## API
 
@@ -38,10 +46,15 @@ Alphabetical order. New terms are added here whenever they come up in meetings (
 - **General:** a feature that makes a Postgres database "understand" the protocol and the T-SQL dialect of SQL Server, so that applications built for SQL Server can talk to Postgres without a full rewrite. It is commonly used in migrations from SQL Server to Postgres. With this feature, a SQL Server schema usually shows up in Postgres as a schema with a compound name: the name of the SQL Server database, an underscore and the schema name (for example, `<database>_dbo`). (General definition from whoever wrote the documentation.)
 - **At Quorum:** there is a database called `babelfish_db` on the test Postgres instance. Todd only said that the other databases there (besides `datamigration`) are used by him to test the migration from MS SQL to Postgres; the relationship between the name and the Babelfish feature was not confirmed `(inferred)`. In the dev ingestion tool, the Postgres destination server of the DM Colo client points to `babelfish_db`, and a job writes there to a table with a schema in that format `(inferred)`. See [q-analytics/postgres-test-environment.md](q-analytics/postgres-test-environment.md) and [q-analytics/ingestion-pipeline.md](q-analytics/ingestion-pipeline.md).
 
+## Backlog and PBI
+
+- **General:** the backlog is the ordered list of work waiting to be done; a PBI (product backlog item) is one entry in it: a story, a bug or a task.
+- **At Quorum:** the product backlog in Jira is partly stale or obsolete (for example, items about ACA pipeline credentials and Synapse) and is not getting cleaned up (Sam, 2026-10-30). The Jira PBI Creator skill works on PBIs. See [company/agile-process-and-jira.md](company/agile-process-and-jira.md).
+
 ## BDC
 
 - **General:** at dealerships, it usually stands for "Business Development Center", the department that handles contacts and leads (inferred).
-- **At Quorum:** Todd mentioned "Carbon60 (BDC data, New Brunswick)" as an example of a source. Exact meaning to be confirmed. The public website also lists "BDC" as a solution area. DealerMine's production jobs deal with contacts and appointments from the appointment center, which seems to be that department `(inferred)`.
+- **At Quorum:** Todd mentioned "Carbon60 (BDC data, New Brunswick)" as an example of a source. Exact meaning to be confirmed. The public website also lists "BDC" as a solution area. DealerMine's production jobs deal with contacts and appointments from the appointment center, which seems to be that department `(inferred)`. Jira (DR-2907, 2026-10-30) confirms the use: the Agent Console is "the main BDC report" for the "BDC Manager" (see [q-analytics/agent-console-report.md](q-analytics/agent-console-report.md)).
 
 ## Benchmarking (comparing customers)
 
@@ -97,6 +110,16 @@ Alphabetical order. New terms are added here whenever they come up in meetings (
 - **General:** an English expression for something made with the same mold, identical in every copy.
 - **At Quorum:** Sam's analogy: all dealerships have the **same schema** of database (same tables and fields), but each with its own data and its own server. See [customers/dealerships.md](customers/dealerships.md).
 
+## Crystal Reports (`.rpt`)
+
+- **General:** a report-design tool whose reports are saved as `.rpt` files; the layout and the calculation formulas ("Crystal formulas") live inside the file, on top of the data the report reads from a database.
+- **At Quorum:** the Agent Console is a Crystal report (`TeamModel_BDC_Results_s1000.rpt`); part of its logic exists only as formulas in that file, so they have to be exported to be documented and rebuilt (Jira DR-2908, 2026-10-30). See [q-analytics/agent-console-report.md](q-analytics/agent-console-report.md).
+
+## Cycle time, lead time and throughput
+
+- **General:** delivery metrics from agile work. **Lead time** is how long a request takes from creation to done; **cycle time** is how long it takes from the moment work starts to done; **throughput** is how many items are finished in a period (for example stories per sprint).
+- **At Quorum:** chosen as indicators for Eduardo's work, to be shown to leadership later (not an existing Quorum practice that anyone described). See [tasks/metrics-framework.md](tasks/metrics-framework.md).
+
 ## Database vs. schema
 
 - **General:** a Postgres server can contain several **databases**, isolated from one another, and each database contains several **schemas** (folders of tables). Every new Postgres comes with a database called `postgres`, used as the default for administration and the initial connection. A new schema starts out empty, and the `public` schema is the shared default.
@@ -139,6 +162,15 @@ Alphabetical order. New terms are added here whenever they come up in meetings (
 ## DMS agnostic
 
 - **At Quorum:** Sam said that AutoVance is "DMS agnostic": it works with the Quorum DMS or with competitors' DMSs. See [products/brands.md](products/brands.md).
+
+## Epic (Jira)
+
+- **General:** in Jira, a large piece of work that groups several stories.
+- **At Quorum:** the Agent Console rebuild is the epic **DR-2907** in the "Data and Reporting" (DR) project, with four stories (DR-2908 to DR-2911). See [tasks/dr-2907-agent-console-rebuild.md](tasks/dr-2907-agent-console-rebuild.md).
+
+## Estabot
+
+- **At Quorum:** a label in Jira that is applied automatically after the Jira PBI Creator skill refines a backlog item; it starts the story point estimation (Sam, 2026-10-30). Rick ran it on the Agent Console epic on 2026-10-30 (stories of 5 points, the final visualization story of 8; the note calls it "Rovo/AI in Jira", which is not confirmed to be the same thing). How the estimate is produced and who reviews it are open questions. See [company/agile-process-and-jira.md](company/agile-process-and-jira.md).
 
 ## ETL
 
@@ -197,7 +229,11 @@ Alphabetical order. New terms are added here whenever they come up in meetings (
 ## Jira and story points
 
 - **General:** Jira is a work management tool; story points are a relative measure of the effort of a story (task).
-- **At Quorum:** Sam said that, when the scope changes, the preference is to document it and update the story points in Jira. See [company/culture-and-expectations.md](company/culture-and-expectations.md).
+- **At Quorum:** Sam said that, when the scope changes, the preference is to document it and update the story points in Jira. See [company/culture-and-expectations.md](company/culture-and-expectations.md). On 2026-10-30 he added that story points measure complexity, not time, but stakeholders treat them as time, and that the team is on sprint 116 with a partly stale backlog; see [company/agile-process-and-jira.md](company/agile-process-and-jira.md) and the entries "Backlog and PBI", "Estabot" and "Sprint and Scrum ceremonies".
+
+## Jira PBI Creator (Claude skill)
+
+- **At Quorum:** a Claude skill built by Rick that refines Jira backlog items automatically; Sam uses it (2026-10-30). After refinement the Estabot label is applied. See "Skill (Claude)" and [company/agile-process-and-jira.md](company/agile-process-and-jira.md).
 
 ## Last run variable (`last_run_var`)
 
@@ -217,7 +253,11 @@ Alphabetical order. New terms are added here whenever they come up in meetings (
 ## MCP (Model Context Protocol)
 
 - **General:** a standard that lets an AI assistant, such as Claude, use external tools (query a database, create charts).
-- **At Quorum:** Superset has MCP support, with authentication through Descope (deck); Todd showed the integration with Claude Desktop, to create charts, audit SQL and validate data. Recommended flow: build in Dev, check, export to production.
+- **At Quorum:** Superset has MCP support, with authentication through Descope (deck); Todd showed the integration with Claude Desktop, to create charts, audit SQL and validate data. Recommended flow: build in Dev, check, export to production. Rick's longer-term vision (2026-10-30) is an MCP server connected to the dashboards so that users can query the data through AI, "the AI harness is the visualization tool of the future" (see [q-analytics/overview.md](q-analytics/overview.md)).
+
+## Mori and Mori Metrics
+
+- **At Quorum:** "Mori" is the **AI brand**: everything AI at Quorum falls under it (Rick, 2026-10-30). In the Agent Console epic, **Mori AI** answers inbound calls to the dealership's call center; per-call data from the provider Viova is in Q Analytics (`dm.mori_call`). **Mori Metrics** is the planned new name of Q Analytics, next year (Rick). MORI is also a yellow DealerMine product in Rick's diagram. See [products/brands.md](products/brands.md), [q-analytics/overview.md](q-analytics/overview.md) and [q-analytics/agent-console-report.md](q-analytics/agent-console-report.md). Whether Mori is a product, a brand or both, and what Viova does exactly, are open questions.
 
 ## MSSQL (Microsoft SQL Server)
 
@@ -268,9 +308,14 @@ Alphabetical order. New terms are added here whenever they come up in meetings (
 - **General:** computing totals and sums beforehand and storing them in a smaller table, so the query is fast.
 - **At Quorum:** they exist because some raw tables reach ~425 GB; the example was 2 minutes versus 2 seconds of loading time (Todd). DealerMine's production jobs also aggregate at the source, with `GROUP BY`, and load only the result (see [q-analytics/ingestion-pipeline.md](q-analytics/ingestion-pipeline.md)); Eduardo's first job follows the same pattern.
 
+## Product owner and Scrum Master
+
+- **General:** in Scrum, the product owner decides what is built and in which order and owns the backlog; the Scrum Master looks after the team's process (runs the ceremonies, removes blockers).
+- **At Quorum:** nobody holds either role as a dedicated job today; Sam has been acting as product owner and Scrum Master, plus developer and QA (Sam, 2026-10-30). The Granola summary also mentions Patrick as an "external product owner", whose meaning is unclear. See [company/agile-process-and-jira.md](company/agile-process-and-jira.md).
+
 ## Q Analytics
 
-- **At Quorum:** Quorum's main reporting tool, built on Superset + Postgres; customer-facing (dealerships). In Power BI it was one of two tenants, alongside Q Insights (Sam). See [q-analytics/overview.md](q-analytics/overview.md).
+- **At Quorum:** Quorum's main reporting tool, built on Superset + Postgres; customer-facing (dealerships). In Power BI it was one of two tenants, alongside Q Insights (Sam). To be rebranded as "Mori Metrics" next year (Rick, 2026-10-30). See [q-analytics/overview.md](q-analytics/overview.md).
 
 ## Q Insights
 
@@ -284,6 +329,16 @@ Alphabetical order. New terms are added here whenever they come up in meetings (
 
 - **General:** a screen in a tool that lets you run a query directly against a database, without leaving the tool.
 - **At Quorum:** a feature of the ingestion tool for live querying of a client's source database, for auditing (Todd; README). In Eduardo's practice, it is used to explore DealerMine's test SQL Server with only `SELECT` limited by `TOP`. See [q-analytics/dev-ingestion-practice.md](q-analytics/dev-ingestion-practice.md).
+
+## Ready for Acceptance
+
+- **General:** a workflow status meaning the work is finished by the developer and waits for the requester to check and accept it.
+- **At Quorum:** a status in Jira; items sit there with no notification until someone moves them to Done, which makes the acceptance flow unreliable (Sam, 2026-10-30). See [company/agile-process-and-jira.md](company/agile-process-and-jira.md).
+
+## Refinement
+
+- **General:** backlog refinement: clarifying, splitting and estimating items before they enter a sprint.
+- **At Quorum:** Sam logs time against a standing refinement issue in Jira (up to about 2 hours a day); refinement meetings no longer happen, and the Jira PBI Creator skill refines items automatically (Sam, 2026-10-30). See [company/agile-process-and-jira.md](company/agile-process-and-jira.md).
 
 ## Repair order (RO) and work order (WO)
 
@@ -319,15 +374,40 @@ Alphabetical order. New terms are added here whenever they come up in meetings (
 - **General:** gradual growth of what has to be delivered, without an adjustment to the deadline or effort.
 - **At Quorum:** handled case by case, without a rigid formal process: document the change, update the story points in Jira and resolve it (Sam). See [company/culture-and-expectations.md](company/culture-and-expectations.md).
 
+## Secrets and secret scanning
+
+- **General:** secrets are passwords, tokens, keys and connection strings; secret scanning is an automatic search of code repositories for them, so that none is committed by mistake.
+- **At Quorum:** there are no firm or written rules on secrets, credentials and repository hygiene, and repository scanning is not in place; Sam suggests an automated Claude skill as a baseline (2026-10-30). This documentation never records secrets (guide, principle 9). See [company/governance-and-security-practices.md](company/governance-and-security-practices.md).
+
 ## Security manager (Superset)
 
 - **General:** the Superset component that decides who can see what (dashboards, datasets, rows). It can be replaced by a customized version in code.
 - **At Quorum:** there is a custom security manager that uses the login metadata to control access to dashboards and RLS (deck, slide 13).
 
+## Service account
+
+- **General:** an account used by a system or shared by several people, instead of an account belonging to one person.
+- **At Quorum:** a shared Power BI service account is in use: it can be audited by IP, but it is a single point that can be switched off or compromised (Sam, 2026-10-30). See [company/governance-and-security-practices.md](company/governance-and-security-practices.md).
+
 ## Shadowing
 
 - **General:** following an experienced person while they work, in order to learn by observing.
 - **At Quorum:** Rick arranged 3 to 4 hours of shadowing for Eduardo with Sam on the existing reports; Sam said that Eduardo can follow him while he works (see [onboarding/first-weeks.md](onboarding/first-weeks.md)).
+
+## Skill (Claude)
+
+- **General:** a packaged set of instructions that teaches Claude to do a specific task in a repeatable way.
+- **At Quorum:** the Jira PBI Creator skill (built by Rick); Sam also proposes a skill that scans repositories for exposed secrets (2026-10-30). See [company/agile-process-and-jira.md](company/agile-process-and-jira.md).
+
+## SOC 2
+
+- **General:** an external security audit standard for service companies; it checks controls over security, availability and confidentiality, and requires written policies and evidence that they are followed.
+- **At Quorum:** SOC 2 compliance is a stated goal (Sam, 2026-10-30); no date or owner is known. See [company/governance-and-security-practices.md](company/governance-and-security-practices.md).
+
+## Sprint and Scrum ceremonies
+
+- **General:** a sprint is a fixed period of work (often 1 to 4 weeks); the Scrum ceremonies are sprint planning, the daily check-in, the sprint review, the retrospective and backlog refinement.
+- **At Quorum:** the team is on sprint 116, but the formal ceremonies no longer happen; meetings are ad hoc (Sam, 2026-10-30). See [company/agile-process-and-jira.md](company/agile-process-and-jira.md).
 
 ## SSO (single sign-on)
 
@@ -348,10 +428,6 @@ Alphabetical order. New terms are added here whenever they come up in meetings (
 
 - **General:** Azure Synapse is Microsoft's data warehouse/analytics service; SQL Server is Microsoft's relational database; Power BI is Microsoft's BI tool and Fabric is the platform that integrates it.
 - **At Quorum:** it was the previous stack (Synapse + SQL Server data warehouse + Power BI Fabric), expensive to operate and maintain (Todd). See [q-analytics/powerbi-to-superset-migration.md](q-analytics/powerbi-to-superset-migration.md). The deck says SQL Server is being added as a **destination** database of the new ingestion, and Todd said in the call of 2026-10-27 that it is already available.
-
-## System Control table
-
-- **At Quorum:** a DMS table that Sam mentioned when telling the story of a bulk-change error on a live server, fixed with a backup. The table's exact role was not explained.
 
 ## T-SQL
 

@@ -1,8 +1,8 @@
 ---
 title: Brands, products and coverage in Q Analytics
 summary: Valsoft > Quorum > 4 brands > products structure, with what each product does (public website and Sam), the status of each in Q Analytics according to Rick's diagram, examples of ingested sources and the known infrastructure.
-updated_at: 2026-10-29
-sources: [Rick's diagram, image sent by Eduardo on 2026-10-27 (transcribed here), meeting with Rick 2026-10-26 (../meetings/2026-10-26-rick-kickoff.md), meeting with Todd 2026-10-26 (../meetings/2026-10-26-todd-technical-tour.md), call with Todd 2026-10-27 (../meetings/2026-10-27-todd-ingestion-call.md), conversation with Sam 2026-10-29 (../meetings/2026-10-29-sam-business-rules.md), public website consulted on 2026-10-27 (pages https://quoruminfotech.com/brands/, /dms/, /crm/, /sales-retailing/ and /service-retailing/)]
+updated_at: 2026-10-30
+sources: [follow-up with Rick 2026-10-30 (../meetings/2026-10-30-rick-follow-up.md), Jira DR-2910 (Atlassian connector, 2026-10-30), Rick's diagram, image sent by Eduardo on 2026-10-27 (transcribed here), meeting with Rick 2026-10-26 (../meetings/2026-10-26-rick-kickoff.md), meeting with Todd 2026-10-26 (../meetings/2026-10-26-todd-technical-tour.md), call with Todd 2026-10-27 (../meetings/2026-10-27-todd-ingestion-call.md), conversation with Sam 2026-10-29 (../meetings/2026-10-29-sam-business-rules.md), public website consulted on 2026-10-27 (pages https://quoruminfotech.com/brands/, /dms/, /crm/, /sales-retailing/ and /service-retailing/)]
 status: confirmed
 ---
 
@@ -44,7 +44,7 @@ The "What it does" column comes from the **public website** (consulted on 2026-1
 | Quorum DMS | Forecast Tool | Red | Not on the website |
 | DealerMine | DealerMine Service CRM | Yellow | Service CRM: increase contacts, appointments and service revenue, combining automation and personal contact (includes "AI Marketing", with SMS and voicemail messages) |
 | DealerMine | DealerMine Sales CRM | Yellow | Sales CRM: tracks each customer through the funnel, captures leads with automatic follow-ups and offers mobile access |
-| DealerMine | MORI | Yellow | Not on the website |
+| DealerMine | MORI | Yellow | Not on the website. Rick (2026-10-30): "Mori" is the **AI brand**; everything AI at Quorum falls under it. Per Jira (DR-2910), Mori AI answers inbound calls to the dealership's call center, and its per-call data is in Q Analytics (`dm.mori_call`) |
 | Autovance | Autovance Desk | Yellow | "Desking": structure the deal (rates, residual values, discounts) with mobile desking and clear worksheets for the customer |
 | Autovance | Autovance Menu | Yellow | F&I menu (financing and insurance) presented in every sale, for the customer to choose from |
 | Autovance | Autovance MyDeal | Yellow | Digital retailing: the customer builds their own deal online, connected to the in-store transaction |
@@ -94,7 +94,8 @@ Expand [Q Analytics](../q-analytics/overview.md) to all products, not just Quoru
 
 - Which brand/product uses which database (Postgres, MySQL, T-SQL) and where does each one run?
 - Is there a defined priority among the yellow and red products for the expansion?
-- **MORI, Sales Planner and Forecast Tool** do not appear on the website: are they internal products, newer ones or products with an internal name? What does each one do? Sam says Sales Planner is work in progress, but the diagram shows it in purple (data flowing): is the product still in development while the data already arrives?
+- **MORI:** partly answered on 2026-10-30 (the AI brand; Mori AI handles calls; see above and [q-analytics/agent-console-report.md](../q-analytics/agent-console-report.md)). Still open: is Mori a product, a brand above products, or both? Rick calls it "the DealerMind AI brand" (Granola; DealerMind is a known transcription error for DealerMine); is it part of DealerMine only or of all brands? And why is it yellow in the diagram?
+- **Sales Planner and Forecast Tool** do not appear on the website: are they internal products, newer ones or products with an internal name? What does each one do? Sam says Sales Planner is work in progress, but the diagram shows it in purple (data flowing): is the product still in development while the data already arrives?
 - **Lead Generator:** which brand is it from, and is it still active? It does not appear in the diagram.
 - Granola says AutoVance was "acquired from Rick". Who is this Rick (the CTO? someone else? a transcription error) and from whom did Quorum acquire AutoVance?
 - Is QDMS Quorum DMS? And what is Carbon60 in relation to the products?

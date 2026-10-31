@@ -8,7 +8,7 @@ status: draft
 
 # Ingestion agent (client), deployment, test environments and jobs
 
-This file details one part of the [ingestion tool](ingestion-pipeline.md): the program installed close to the source database, how it is put into operation, where it can be tested and what Eduardo should (and should not) do in the tool. A job's fields, scheduling and snapshots are in [ingestion-pipeline.md](ingestion-pipeline.md). Improvement ideas are in [improvement-ideas.md](improvement-ideas.md). The test Postgres (databases, connection and Todd's guidance) is in [postgres-test-environment.md](postgres-test-environment.md), and the diary of Eduardo's practice (objects created, queries, next steps) is in [dev-ingestion-practice.md](dev-ingestion-practice.md).
+This file details one part of the [ingestion tool](ingestion-pipeline.md): the program installed close to the source database, how it is put into operation, where it can be tested and what Eduardo should (and should not) do in the tool. A job's fields, scheduling and snapshots are in [ingestion-pipeline.md](ingestion-pipeline.md). Improvement ideas are in [../improvement-ideas.md](../improvement-ideas.md) (Q Analytics section). The test Postgres (databases, connection and Todd's guidance) is in [postgres-test-environment.md](postgres-test-environment.md), and the diary of Eduardo's practice (objects created, queries, next steps) is in [dev-ingestion-practice.md](dev-ingestion-practice.md).
 
 ## In plain words
 

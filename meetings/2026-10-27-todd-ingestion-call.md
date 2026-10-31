@@ -21,7 +21,7 @@ status: confirmed
 | End-to-end ingestion, client = agent, 4-step deployment, agent technical guide (Word), dev versions and test environments, jobs and Git, API clients, Eduardo's sandbox | [q-analytics/ingestion-agent.md](../q-analytics/ingestion-agent.md) |
 | Clients > pipelines > jobs model, features, summary and links | [q-analytics/ingestion-pipeline.md](../q-analytics/ingestion-pipeline.md) |
 | Environments (dev, test, data migration), available SQL Server destination, backup | [q-analytics/architecture.md](../q-analytics/architecture.md) |
-| Idea of undoing job deletion via the X | [q-analytics/improvement-ideas.md](../q-analytics/improvement-ideas.md) |
+| Idea of undoing job deletion via the X | [improvement-ideas.md](../improvement-ideas.md) (QA-1) |
 | Sources: Zoho (internal), Powerlane (API), DealerMine test database | [products/brands.md](../products/brands.md) |
 | Todd (infrastructure team deploys agents; provides access) | [people/directory.md](../people/directory.md) |
 | Next steps and status of the questions for Todd | [onboarding/first-weeks.md](../onboarding/first-weeks.md) |

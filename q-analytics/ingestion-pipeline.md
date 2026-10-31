@@ -170,7 +170,7 @@ What Eduardo saw while exploring the dev version of the tool (his account; not o
 | DMColoMSSQL | SQL Server | The same SQL Server test database |
 | DMColoPG | PostgreSQL | `babelfish_db` (inferred: the same as the test Postgres seen in pgAdmin) |
 
-Eduardo later created **DMColoPGTestEdu**, PostgreSQL pointing to `datamigration` (see [dev-ingestion-practice.md](dev-ingestion-practice.md)). As Eduardo observed, the tab does not show which pipelines and jobs use each server (improvement idea in [improvement-ideas.md](improvement-ideas.md)).
+Eduardo later created **DMColoPGTestEdu**, PostgreSQL pointing to `datamigration` (see [dev-ingestion-practice.md](dev-ingestion-practice.md)). As Eduardo observed, the tab does not show which pipelines and jobs use each server (improvement idea QA-2 in [../improvement-ideas.md](../improvement-ideas.md)).
 
 **Pipelines of the DM Colo client in dev:**
 
